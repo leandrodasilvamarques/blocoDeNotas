@@ -1,4 +1,4 @@
-package aplication;
+package Aplicacao;
 
 import entities.Anotacao;
 import entities.BlocoDeNotas;

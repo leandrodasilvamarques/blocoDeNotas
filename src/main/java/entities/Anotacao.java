@@ -5,16 +5,15 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Anotacao {
-    LocalDateTime data = LocalDateTime.now();
-    DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
-
     //Atributos
+    private LocalDateTime data = LocalDateTime.now();
+    private DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
     private String texto;
     private String titulo;
     private boolean deletar;
 
-    //data e hora ja formatada e feita
+    //data e hora ja formatada
     public String getDataEHora() {
         String dataFormatada = data.format(formatoData);
         String horaFormatada = data.format(formatoHora);

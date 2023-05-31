@@ -1,38 +1,63 @@
 package entities;
 
+import exceptions.TituloTextoNaoExisteException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AnotacaoTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    Anotacao anotacao;
+    Anotacao teste;
+
+    @BeforeEach
     void setUp() {
+        teste = new Anotacao();
+        anotacao = new Anotacao();
+        anotacao.setTitulo("leo");
+        anotacao.setTexto("leo");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getDataEHora() {
+        //nao da de testar por conta dos segundos que sempre mudam
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getTexto() {
+        assertEquals("leo", anotacao.getTexto());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setTexto() {
+        teste.setTexto("ola");
+        assertEquals("ola", teste.getTexto());
+
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getTitulo() {
+        assertEquals("leo", anotacao.getTitulo());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setTitulo() {
+        teste.setTitulo("leo");
+        assertEquals("leo", teste.getTitulo());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isDeletar() {
+        assertEquals(false, anotacao.isDeletar());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setDeletar() {
+        teste.setDeletar(true);
+        assertEquals(true, teste.isDeletar());
     }
 }

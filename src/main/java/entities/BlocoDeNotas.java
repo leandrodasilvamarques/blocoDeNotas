@@ -19,7 +19,7 @@ public class BlocoDeNotas {
     //busca a anotação pelo titulo
     public Anotacao getNotapeloTitulo(String titulo) {
         for (Anotacao anotacao : arrayListAnotacao) {
-            if (!anotacao.isDeletar() && anotacao.getTitulo() != null && arrayListAnotacao.size() != 0) {
+            if (anotacao.isDeletar() && anotacao.getTitulo() != null && arrayListAnotacao.size() != 0) {
                 if (anotacao.getTitulo().equalsIgnoreCase(titulo)) {
                     return anotacao;
                 }
@@ -100,7 +100,7 @@ public class BlocoDeNotas {
     public Anotacao buscaAnotacaoExistente(String titulo) {
         if (arrayListAnotacao.size() != 0) {
             for (Anotacao anotacao : arrayListAnotacao) {
-                if (!anotacao.isDeletar() && anotacao.getTitulo() != null && arrayListAnotacao != null) {
+                if (anotacao.isDeletar() && anotacao.getTitulo() != null && arrayListAnotacao != null) {
                     if (anotacao.getTitulo().equalsIgnoreCase(titulo)) {
                         return anotacao;
                     }
@@ -112,10 +112,5 @@ public class BlocoDeNotas {
             );
         }
         return null;
-    }
-
-    //get arrayList
-    public ArrayList<Anotacao> getArrayListAnotacao() {
-        return arrayListAnotacao;
     }
 }
